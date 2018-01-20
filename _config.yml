@@ -1,0 +1,14 @@
+title: nullog
+author: Jason Mitchell
+
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "https://nullog.net"
+twitter_username: mitchejj
+github_username:  mitchejj
+
+timezone: US/Eastern
+
+# Build settings
+markdown: kramdown
+theme: minima
+plugins:
