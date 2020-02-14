@@ -1,0 +1,16 @@
+{
+  "title": "nullog",
+  "url": "https://nullog.net",
+  "description": "The dashboard to me.",
+  "feed": {
+    "subtitle": "Really it just a landing page.",
+    "filename": "feed.xml",
+    "path": "/feed/feed.xml",
+    "id": "https://nullog.net/"
+  },
+  "author": {
+    "name": "Jason Mitchell",
+    "email": "@nullog.net"
+  }
+}
+

@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en-US"> 
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>nullog: {{ title }}</title>
+<!--    <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
+--!>
+        <link rel="stylesheet" href="https://unpkg.com/tachyons@4.10.0/css/tachyons.min.css"/>
+        <style>
+            .vh-15 {  height:  15vh; }
+        </style>
+    </head>
+    <body class="vh-100-min">
+        <aside class="white bg-black bb bw3 b--orange flex flex-column " >
+        <div class="bg-black ">
+            <header class=" tc">
+                <h1 class="f-headline fw6 lh-solid">nullog</h1>
+                <h2 class="trackedi f5 fw5">
+                <a class="link light-blue"
+                href="https://twitter.com/mitchejj" title="twitter">@mitchejj</a>
+                </h2>
+            </header>
+            <div class="tc vh-15 f5">
+                <a class="link dim white dib mr3" href="https://github.com/mitchejj" title="GitHub">GitHub</a>
+                <a class="link dim white dib mr3" href="https://strava.com/athletes/2911431" title="Strava">Strava</a>
+                <a class="link dim white dib mr3" href="https://reddit.com/u/_mitchejj_" title="Reddit">Reddit</a>
+            </div>
+    </aside>
+        <div class="black bg-white">
+            <main class="flex flex-column items-center f4-ns ml2 ml0-l mr2 mr0-l">
+                <h2 class="tracked">{{{ title }}}</h2>
+                <div>{{{ content }}}</div>
+            </main>
+            <footer class="white bt bw3 b--orange pv3 bg-black tc fs5 vh-15">
+                <p class="tracked">&copy; 2020 @mitchejj &#183; <a class="normal tracked-mega link dim white" href="https://creativecommons.org/licenses/by/4.0/" title="CC BY 4.0">CC BY 4.0</a>
+                </p>
+                <p> "Your identity is your most valuable possession." -
+                Elastigirl, The Incredibles</p>
+            </footer>
+        </div>
+    </body>
+</html>
+
+
+
+
