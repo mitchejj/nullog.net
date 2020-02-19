@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "start": "npm-run-all --parallel dev:*",
+    "dev": "npm-run-all --parallel dev:*",
     "dev:11ty": "ELEVENTY_ENV=development eleventy --serve",
     "dev:parcel": "parcel watch src/_assets/css/* --out-dir _site_/assets",
     "build": "npx eleventy",
