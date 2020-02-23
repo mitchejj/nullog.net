@@ -1,10 +1,13 @@
-@import '../../../node_modules/tachyons/src/tachyons.css';
-
-.vh-10-min {  min-height:  10vh;  }
+.vh-10-min {  min-height:  10vh; }
 .vh-15-min {  min-height:  15vh; }
 .vh-25-min {  min-height:  25vh; }
 .vh-33-min {  min-height:  33vh; }
 .vh-50-min {  min-height:  50vh; }
 .vh-75-min {  min-height:  75vh; }
-.vh-15 { height: 15vh; }
+.vh-15     {  height:      15vh; }
 
+@tailwind base;
+
+@tailwind components;
+
+@tailwind utilities;
