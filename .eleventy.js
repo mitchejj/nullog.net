@@ -23,15 +23,15 @@ module.exports = function(eleventyConfig) {
     typographer: true
   };
   const mapping = {
-    h1: ['md-h1', 'f1', 'code', 'lh-title'],
-    h2: ['md-h2', 'f2', 'code', 'tracked', 'lh-title'],
-    h3: ['md-h1', 'f3', 'code', 'tracked', 'lh-title'],
-    h4: ['md-h2', 'f4', 'code', 'tracked', 'lh-title'],
-    h5: ['md-h1', 'f5', 'code', 'tracked', 'lh-title'],
-    h6: ['md-h2', 'f6', 'code', 'tracked', 'lh-title'],
-    p: ['md-text', 'fs-normal', 'lh-copy', 'measure-s', 'measure-wide-ns'],
-    a: ['md-link', 'no-underline', 'link', 'dim', 'grow', 'mid-gray', 'hover-bg-light-blue', 'hover-near-black'],
-    code: ['md-code', 'bg-washed-blue'],
+    h1: ['md-h1', 'text-6xl', 'my-8'],
+    h2: ['md-h2', 'text-5xl', 'my-6'],
+    h3: ['md-h1', 'text-4xl', 'my-5'],
+    h4: ['md-h2', 'text-3xl', 'my-4'],
+    h5: ['md-h1', 'text-2xl', 'my-4'],
+    h6: ['md-h2', 'text-xl', 'my-3'],
+    p: ['md-text', 'text-xl', 'my-3'],
+    a: ['md-link'],
+    code: ['md-code'],
     em: ['tag'],
     ol: ['list']
   };
