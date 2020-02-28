@@ -1,8 +1,19 @@
 {
   "title": "nullog",
+  "_title_": "nu<span class=\"underline\">ll</span>og",
   "subtitle": "running, °o°, tech, life",
+  "links": {
+    "github": {
+        "name": "GitHub",
+        "url": "https://github.com/mitchejj"
+    },
+    "strava": {
+        "name": "Strava",
+        "url": "https://strava.com/athletes/2911431"
+    }
+  },
   "url": "https://nullog.net",
-  "description": "The dashboard to me.",
+  "description": "A dashboard to my digital-self.",
   "feed": {
     "subtitle": "Really it just a landing page.",
     "filename": "feed.xml",

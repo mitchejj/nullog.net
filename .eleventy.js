@@ -23,17 +23,10 @@ module.exports = function(eleventyConfig) {
     typographer: true
   };
   const mapping = {
-    h1: ['md-h1', 'text-6xl', 'my-8'],
-    h2: ['md-h2', 'text-5xl', 'my-6'],
-    h3: ['md-h1', 'text-4xl', 'my-5'],
-    h4: ['md-h2', 'text-3xl', 'my-4'],
-    h5: ['md-h1', 'text-2xl', 'my-4'],
-    h6: ['md-h2', 'text-xl', 'my-3'],
-    p: ['md-text', 'text-xl', 'my-3'],
-    a: ['md-link'],
     code: ['md-code'],
     em: ['tag'],
-    ol: ['list']
+    ul: ['list-inside', 'my-3'],
+    ol: ['list-disc', 'list-inside', 'my-3']
   };
 
   const md = markdownIt(options)
@@ -44,7 +37,7 @@ module.exports = function(eleventyConfig) {
   });
   eleventyConfig.addFilter("short_date", function(value) {
         let date = new Date(value);
-        let result = pad(date.getFullYear()) + '-' + pad(date.getMonth()) + '-' + pad(date.getDay());
+        let result = pad(date.getFullYear()) + '-' + pad(date.getMonth() + 1) + '-' + pad(date.getDate());
         return result;
   });
 

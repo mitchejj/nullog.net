@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "npm-run-all --parallel dev:*",
     "dev:11ty": "ELEVENTY_ENV=development eleventy --serve",
-    "dev:parcel": "parcel watch src/_assets/css/* --out-dir _site_/assets",
+    "dev:parcel": "parcel watch src/_assets/css/main.css --out-dir _site_/assets --no-cache --log-level 4",
     "build": "npx eleventy",
     "serve": "npx eleventy --serve",
     "debug": "DEBUG=* npx eleventy"

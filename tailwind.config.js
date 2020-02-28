@@ -1,10 +1,14 @@
 module.exports = {
     theme: {
-        extend: {
+        listStyleType: {
+            none: 'none',
+            disc: 'disc',
+            square: 'square'
         },
-    },
-    variants: {
-    },
-    plugins: [
-    ]
+        fontFamily: {
+            code: 'Consolas, monaco, monospace',
+            system_sans: 'sans-serif',
+            system_serif: 'serif'
+        }
+    }
 }
