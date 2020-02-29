@@ -6,7 +6,9 @@
     "dev": "npm-run-all --parallel dev:*",
     "dev:11ty": "ELEVENTY_ENV=development eleventy --serve",
     "dev:parcel": "parcel watch src/_assets/css/main.css --out-dir _site_/assets --no-cache --log-level 4",
-    "build": "npx eleventy",
+    "build": "npm-run-all prod:*",
+    "prod:11ty": "ELEVENTY_ENV=production eleventy --output=./build",
+    "prod:parcel": "parcel build src/_assets/css/* --out-dir ./build/assets --no-source-maps",
     "serve": "npx eleventy --serve",
     "debug": "DEBUG=* npx eleventy"
   },

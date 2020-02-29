@@ -2,4 +2,5 @@ _site_
 node_modules
 .cache
 .yarn*
-
+build
+dist
