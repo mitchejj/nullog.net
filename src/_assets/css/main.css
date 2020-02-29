@@ -19,20 +19,20 @@ https://github.com/tailwindcss/typography/blob/master/src/index.js
 
 .markdown {
    code {
-       @apply font-code text-blue-200 pl-1 pr-1;
+       @apply font-code pl-1 pr-1;
        font-size: .875em;
    }
     h1 {
-        @apply text-6xl my-8;
+        @apply text-5xl my-8;
     }
     h2 {
-        @apply text-5xl my-6;
+        @apply text-4xl my-6;
     }
     h3 {
-        @apply text-4xl my-5;
+        @apply text-3xl my-5;
     }
     h4 {
-        @apply text-3xl my-4;
+        @apply text-2xl my-4;
     }
     h5 {
         @apply text-2xl my-4;
@@ -44,7 +44,7 @@ https://github.com/tailwindcss/typography/blob/master/src/index.js
         @apply leading-relaxed;
    }
    p + p {
-       @apply m-2;
+       @apply my-2;
    }
    pre {
     @apply font-code bg-gray-800 block max-w-full p-3 break-words rounded;
