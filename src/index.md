@@ -1,13 +1,12 @@
 ---
-layout: layout/index.hbs
+layout: layout/base.hbs
 templateEngineOverride: hbs,md
-title: /index 
+title: "mitchejj" 
 ---
 
-We all have digital lives scattered across multiple online services; the `nullog.net` serves as my primary email presence. This website serves as the entry point my digital-self.
+We all have digital lives scattered across multiple online services; [nullog.net][history] exist as the primary [portal][social] to [my][whoami] digital-self.
 
-
-[whoami]: /whoami
-[history]: /README
-
+[whoami]: /whoami "Who am I, and what is mitchejj?"
+[history]: /history "Revisionist history!"
+[social]: /social "A collection of places where I'm found online"
 

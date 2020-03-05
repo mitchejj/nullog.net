@@ -4,6 +4,7 @@
 .vh-33-min {  min-height:  33vh; }
 .vh-50-min {  min-height:  50vh; }
 .vh-75-min {  min-height:  75vh; }
+.vh-85-min {  min-height:  85vh; }
 .vh-15     {  height:      15vh; }
 
 @tailwind base;
@@ -18,10 +19,6 @@ https://github.com/tailwindcss/typography/blob/master/src/index.js
 }
 
 .markdown {
-   code {
-       @apply font-code pl-1 pr-1;
-       font-size: .875em;
-   }
     h1 {
         @apply text-5xl my-8;
     }
@@ -42,16 +39,51 @@ https://github.com/tailwindcss/typography/blob/master/src/index.js
     }
     p {
         @apply leading-relaxed;
-   }
-   p + p {
-       @apply my-2;
-   }
-   pre {
-    @apply font-code bg-gray-800 block max-w-full p-3 break-words rounded;
-    code {
-       @apply bg-transparent text-white  ; 
+        a {
+            @apply bg-gray-200 text-blue-700 px-1 rounded-t; 
+        }
+        a:hover {
+            @apply border-b border-blue-400;
+        }
+        code {
+            @apply font-code px-1;
+            font-size: .875em;
+        }
     }
-   }
+    p + p {
+        @apply my-3;
+    }
+    p:last-child {
+        @apply pb-3;
+    }
+    ol {
+        @apply list-inside list-circle;
+    }
+    * + ol {
+        @apply mx-3 my-2;
+    }
+    ul {
+        @apply list-inside my-3 mx-4;
+    }
+    * + ul {
+        @apply mx-3 my-2;
+    }
+    li ul {
+        @apply mx-0 my-0;
+    }
+    li {
+        @apply mx-3;
+        a { 
+            @apply border-b border-gray-500 text-blue-600;
+        }
+    }
+    pre {
+        @apply font-code bg-gray-400 block max-w-full py-2 px-3 break-words rounded;
+        code {
+            @apply bg-transparent text-gray-900;
+            font-size: .875em;
+        }
+    }
 }
 
 

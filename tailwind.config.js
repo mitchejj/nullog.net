@@ -3,6 +3,7 @@ module.exports = {
         listStyleType: {
             none: 'none',
             disc: 'disc',
+            circle: 'circle',
             square: 'square'
         },
         fontFamily: {

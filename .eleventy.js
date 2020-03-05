@@ -24,9 +24,7 @@ module.exports = function(eleventyConfig) {
   };
   const mapping = {
     code: ['md-code'],
-    em: ['tag'],
-    ul: ['list-inside', 'my-3'],
-    ol: ['list-disc', 'list-inside', 'my-3']
+    em: ['tag']
   };
 
   const md = markdownIt(options)
@@ -40,9 +38,17 @@ module.exports = function(eleventyConfig) {
         let result = pad(date.getFullYear()) + '-' + pad(date.getMonth() + 1) + '-' + pad(date.getDate());
         return result;
   });
-
+eleventyConfig.addFilter("rfc3339", function(value) {
+    const date = new Date(value);
+    const result = date.toISOString();   
+    return result;
+  });
+    
 eleventyConfig.addCollection("_journal", function(collection) {
     return collection.getFilteredByGlob("src/journal/*.md");
+  });
+eleventyConfig.addCollection("backlog", function(collection) {
+    return collection.getFilteredByGlob("src/backlog/*.md");
   });
 
   eleventyConfig.setLibrary("md", md);

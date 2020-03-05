@@ -2,11 +2,11 @@
 <html lang="en-US"> 
     {{> partials/html/head/base }}
     <body class="{{ bg-color }}">
-        <section class="vh-15-min">
+        <div class="vh-85-min">        <section class="vh-15-min">
                 {{> partials/components/header }}
-                {{> partials/components/services }}
         </section>
                 {{{ content }}}
+        </div>
         {{> partials/html/base_footer }}
     
     </body>
