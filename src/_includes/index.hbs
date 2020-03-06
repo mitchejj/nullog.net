@@ -1,13 +1,13 @@
 <!doctype html>
 <html lang="en-US"> 
     {{> partials/html/head/base }}
-    <body class="bg-gray-800">
-        <section class="text-white vh-75-min">
-            {{> partials/components/header }}
-            {{> partials/components/services }}
+    <body class="{{ bg-color }}">
+        <section class="vh-85-min">
+            <div class="vh-25-min"></div>
+            {{> partials/components/index-head }}
             {{{ content }}}
         </section>
-        {{> partials/html/index_footer }}
+        {{> partials/html/base_footer }}
 
     </body>
 </html>

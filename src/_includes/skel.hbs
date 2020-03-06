@@ -1,17 +1,20 @@
 <!doctype html>
 <html lang="en-US"> 
     {{> partials/html/head/base }}
-    <body class="{{ bg-color }}">
-        <div class="vh-85-min">        <section class="vh-15-min">
+    <body class="">
+
+        <div class="vh-85-min">
+            {{#if non-index }}
+            <section class="">
                 {{> partials/components/header }}
-        </section>
-                {{{ content }}}
+            </section>
+            {{ else }}
+            <section class="min-vh-15">
+                {{> partials/components/index-head }}
+            {{/if}}
+            {{{ content }}}
         </div>
         {{> partials/html/base_footer }}
-    
+
     </body>
 </html>
-
-
-
-
