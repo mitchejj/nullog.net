@@ -1,4 +1,5 @@
 {
     "layout": "layout/base.hbs",
+    "non-index": true,
     "hasDate": true
 }
