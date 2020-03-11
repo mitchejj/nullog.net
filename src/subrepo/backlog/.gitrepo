@@ -1,0 +1,12 @@
+; DO NOT EDIT (unless you know what you are doing)
+;
+; This subdirectory is a git "subrepo", and this file is maintained by the
+; git-subrepo command. See https://github.com/git-commands/git-subrepo#readme
+;
+[subrepo]
+	remote = https://github.com/mitchejj/soggy-oatmeal.git
+	branch = blog-archive
+	commit = d68a36c78268bb60f54f7cb16eac4bb030e98ca4
+	parent = 9b988f913df7145ce1618c1556fb408bbddef4e6
+	method = merge
+	cmdver = 0.4.1
