@@ -48,7 +48,7 @@ eleventyConfig.addCollection("_journal", function(collection) {
     return collection.getFilteredByGlob("src/journal/*.md");
   });
 eleventyConfig.addCollection("backlog", function(collection) {
-    return collection.getFilteredByGlob("src/subrepo/backlog/*.md");
+    return collection.getFilteredByGlob("src/backlog/*.md");
   });
 
   eleventyConfig.setLibrary("md", md);
