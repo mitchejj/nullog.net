@@ -1,5 +1,6 @@
 {
     "layout": "layout/base.hbs",
+    "permalink": "/io/journal/{{ page.date | date: '%Y' }}/{{ page.date | | date: '%m' }}/{{page.date | date: '%d'}}/{{ title | slug }}/",
     "non-index": true,
     "hasDate": true
 }

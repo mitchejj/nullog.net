@@ -1,4 +1,5 @@
 {
     "layout": "layout/base.hbs",
+    "permalink": "{{ path }}",
     "tags": ["626"]
 }
