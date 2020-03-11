@@ -2,17 +2,16 @@
 <html lang="en-US"> 
     {{> partials/html/head/base }}
     <body class="">
-
         <div class="vh-90-min">
-            {{#if non-index }}
+            {{#unless isIndex }}
             <section class="">
                 {{> partials/components/header }}
             </section>
             {{ else }}
             <section class="">
                 {{> partials/components/index-head }}
-            {{/if}}
-            {{{ content }}}
+            {{/unless}}
+                {{{ content }}}
         </div>
         {{> partials/html/base_footer }}
 

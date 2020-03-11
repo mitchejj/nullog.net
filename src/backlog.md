@@ -2,6 +2,7 @@
 layout: layout/base.hbs
 templateEngineOverride: njk,md
 title: backlog
+isIndex: true
 ---
 <div class="-ml-6 -mr-6">
 <ul class="">

@@ -2,6 +2,5 @@
     "layout": "layout/base.hbs",
     "permalink": "{{ path }}",
     "hasDate": true,
-    "non-index": true,
     "hasWarning": true
 }

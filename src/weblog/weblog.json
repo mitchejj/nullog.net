@@ -2,5 +2,5 @@
     "layout": "layout/base.hbs",
     "permalink": "/{{ page.date | date: '%Y' }}/{{ page.date | | date: '%m' }}/{{page.date | date: '%d'}}/{{ title | slug }}/",
     "hasDate": true,
-    "non-index": true
+    "isIndex": false
 }
