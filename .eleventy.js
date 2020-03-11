@@ -50,6 +50,9 @@ eleventyConfig.addCollection("_journal", function(collection) {
 eleventyConfig.addCollection("backlog", function(collection) {
     return collection.getFilteredByGlob("src/backlog/*.md");
   });
+eleventyConfig.addCollection("weblog", function(collection) {
+    return collection.getFilteredByGlob("src/weblog/*.md");
+  });
 
   eleventyConfig.setLibrary("md", md);
   return {
