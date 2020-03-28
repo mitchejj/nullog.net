@@ -7,4 +7,12 @@
     <link rel="shortcut icon" href="data:image/x-icon;," type="image/x-icon">
     <style>
     </style>
+    <meta name=”twitter:card” content=”summary” /> 
+    <meta name=”twitter:site” content=”@mitchejj” /> 
+    <meta name=”twitter:title” content=”{{ metadata.title}}: {{ title }}” /> 
+    <meta name=”twitter:description” content=”{{ metadata.subtitle }}” /> 
+    <!-- fix later when I have better image logic
+        for now this should render correctly for backlog pages
+    --!>
+    <meta name=”twitter:image” content=”{{ meta.image.url }}” />
 </head>
