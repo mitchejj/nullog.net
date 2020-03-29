@@ -16,45 +16,46 @@ module.exports = function(eleventyConfig) {
     const markdownIt = require("markdown-it");
     const markdownItClass = require('@toycode/markdown-it-class');
 
-  const options = {
-    html: true,
-    breaks: true,
-    linkify: true,
-    typographer: true
-  };
-  const mapping = {
-    code: ['md-code'],
-    em: ['tag']
-  };
+    const options = {
+        html: true,
+        breaks: true,
+        linkify: true,
+        typographer: true
+    };
+    const mapping = {
+        code: ['md-code'],
+        em: ['tag']
+    };
+    const md = markdownIt(options)
+        .use(markdownItClass, mapping);
 
-  const md = markdownIt(options)
-    .use(markdownItClass, mapping);
-    
-  eleventyConfig.addFilter("debug", function(value) {
-      return `<xmp>${JSON.stringify(value || "NOTHING", null, 2)}</xmp>`;
-  });
-  eleventyConfig.addFilter("short_date", function(value) {
+    eleventyConfig.addFilter("debug", function(value) {
+        return `<xmp>${JSON.stringify(value || "NOTHING", null, 2)}</xmp>`;
+    });
+    eleventyConfig.addFilter("short_date", function(value) {
         let date = new Date(value);
         let result = pad(date.getFullYear()) + '-' + pad(date.getMonth() + 1) + '-' + pad(date.getDate());
         return result;
-  });
-eleventyConfig.addFilter("rfc3339", function(value) {
-    const date = new Date(value);
-    const result = date.toISOString();   
-    return result;
-  });
-    
-eleventyConfig.addCollection("_journal", function(collection) {
-    return collection.getFilteredByGlob("src/journal/*.md");
-  });
-eleventyConfig.addCollection("backlog", function(collection) {
-    return collection.getFilteredByGlob("src/backlog/*.md");
-  });
-eleventyConfig.addCollection("weblog", function(collection) {
-    return collection.getFilteredByGlob("src/weblog/*.md");
-  });
+    });
+    eleventyConfig.addFilter("rfc3339", function(value) {
+        const date = new Date(value);
+        const result = date.toISOString();   
+        return result;
+    });
 
-  eleventyConfig.setLibrary("md", md);
+    eleventyConfig.addCollection("_journal", function(collection) {
+        return collection.getFilteredByGlob("src/journal/*.md");
+    });
+    eleventyConfig.addCollection("backlog", function(collection) {
+        return collection.getFilteredByGlob("src/backlog/*.md");
+    });
+    eleventyConfig.addCollection("weblog", function(collection) {
+        return collection.getFilteredByGlob("src/weblog/*.md");
+    });
+
+    eleventyConfig.addPassthroughCopy({ "src/_assets/img": "assets/img" });
+
+    eleventyConfig.setLibrary("md", md);
   return {
     dir: {
       input: "src",
