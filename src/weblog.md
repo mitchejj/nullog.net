@@ -3,7 +3,6 @@ layout: layout/base.hbs
 templateEngineOverride: njk,md
 title: weblog
 ---
-<div class="-ml-6 -mr-6">
 <ul class="">
 {%- for entry in collections.weblog | reverse -%}
     <li class="">
@@ -12,5 +11,3 @@ title: weblog
     </li>
 {%- endfor -%}
 </ul>
-
-</div>

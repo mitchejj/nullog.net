@@ -2,24 +2,28 @@
 layout: skel.hbs
 bg-color: bg-white
 ---
-<main class="vh-50-min font-sans">
-    <div  class="mb-5">
-        {{# if hasWarning }}
-        <div class="{{ css.sane_space }} text-center text font-medium p-3
-        bg-red-300">This post has been archived, restoration is in process.</div>
-        {{/if}}
-        <article class="markdown">
+<div  class="vh-50-min font-sans mb-5">
+    {{# if hasWarning }}
+        {{> partials/components/weblog }}
+    {{/if}}
+    <article class="">
+        <header class="{{ css.sane_space }}  border-b">
+            {{# if dispatch }}
+                <span class="block align-baseline text-sm text-blue-300 font-semibold">
+                <a href="{{ dispatch}}">&#10070; {{ getDomain dispatch }}</a></span>
+            {{/if}}
             {{# if title }}
-            <h3 class="{{ css.sane_space }} border-b"> {{{ title }}} </h3>
-            {{/if}}
-            {{# if hasDate }}
-            <div class= "{{ css.sane_space }} -mt-3 mb-3 text-sm text-gray-400 font-semibold">
-                <time>{{ rfc3339 page.date }}</time>
-            </div>
-            {{/if}}
-            <div class="{{ css.sane_space }} tracking-wide">
-                {{{ content }}}
-            </div>
-        </article>
-    </div>
-</main>
+            <h3 class="text-3xl inline-block">{{{ title }}} </h3>
+            <h4 class="ml-2 -mt-2 text-2xl inline-block text-gray-500"> {{{ subtitle }}}</h4>
+        </header>
+        {{/if}}
+        {{# if hasDate }}
+        <div class= "{{ css.sane_space }}  mb-3 text-sm text-gray-400 font-semibold">
+            <time>{{ rfc3339 page.date }}</time>
+        </div>
+        {{/if}}
+        <div class="{{ css.sane_space }} markdown tracking-wide">
+            {{{ content }}}
+        </div>
+    </article>
+</div>

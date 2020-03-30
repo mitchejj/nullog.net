@@ -42,6 +42,11 @@ module.exports = function(eleventyConfig) {
         const result = date.toISOString();   
         return result;
     });
+    eleventyConfig.addFilter("getDomain", function(value) {
+        const url = value.replace('http://','').replace('https://','');
+        const urlParts = url.split(/[/?#]/);
+        return urlParts[0]
+    });
 
     eleventyConfig.addCollection("_journal", function(collection) {
         return collection.getFilteredByGlob("src/journal/*.md");
