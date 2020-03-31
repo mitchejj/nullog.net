@@ -55,7 +55,11 @@ Again, work prevented me from really putting in the training time but I felt I s
     * 10K Split --- 1:04:21
     * 15K Split --- 1:39:21
 
+<<<<<<< HEAD
 Early summer, just before memorial day I went out on a short run and I heard and felt a pop in my lower leg... my running year just died. Noting to serious, I didn't see a doctor but I knew I just needed to rest.
+=======
+Early summer, just before memorial day I went out on a short run and I heard and felt a pop in my lower leg... my running year just died. Noting to serious, I didn't see a doctor but I knew I just needed to rest. 
+>>>>>>> refs/subrepo/src/backlog/fetch
 
 [d5k]: https://www.strava.com/activities/464946606
 [d10k]: https://www.strava.com/activities/465662669
