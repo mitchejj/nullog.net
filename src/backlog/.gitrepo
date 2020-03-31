@@ -6,7 +6,7 @@
 [subrepo]
 	remote = https://github.com/mitchejj/soggy-oatmeal.git
 	branch = blog-archive
-	commit = 907b75f045aad085b78aef88f62c93f28e1487ad
-	parent = 9b988f913df7145ce1618c1556fb408bbddef4e6
+	commit = cb8d7686a62289b940c499525dac4fcf2b3e59d3
+	parent = fac66273a8f5e0b4ac5570a4054d76bbb950764d
 	method = merge
 	cmdver = 0.4.1
