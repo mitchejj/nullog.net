@@ -53,6 +53,9 @@ https://github.com/tailwindcss/typography/blob/master/src/index.js
     p + p {
         @apply my-3;
     }
+    ul + p {
+        @apply my-3;
+    }
     p:last-child {
         @apply pb-3;
     }
