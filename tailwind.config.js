@@ -1,4 +1,8 @@
 module.exports = {
+    future: {
+        removeDeprecatedGapUtilities: true,
+    },
+    purge: false,
     theme: {
         listStyleType: {
             none: 'none',

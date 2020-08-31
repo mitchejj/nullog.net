@@ -1,5 +1,6 @@
 ---
 title: Backing up with gnome-disks and LVM
+date: 2020-03-05T20:56:56.075Z
 ---
 
 Prepping my system head in for repair I want to have an image of my system to get up and running quickly. I know I could use `dd`, however I just didn't like that approach as it is more likely I could make a mistake and loose all my data, `dd` also feels slow.

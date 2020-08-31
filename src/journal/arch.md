@@ -1,5 +1,6 @@
 ---
 title: My Arch Install
+date: 2020-03-07T21:03:00.910Z
 ---
 
 I've been trying trying to maintain the idea of reproducable installs and setup accross my devices for various reasons. One reason is going to happen sooner that I would have liked, I will have to send my Motile laptop in for repair.

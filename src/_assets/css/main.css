@@ -12,10 +12,8 @@
 
 @tailwind components;
 /*
- 
-https://github.com/tailwindcss/typography/blob/master/src/index.js
- 
- */
+    https://github.com/tailwindcss/typography/blob/master/src/index.js
+*/
 .md-text {
 }
 .markdown {
@@ -80,12 +78,18 @@ https://github.com/tailwindcss/typography/blob/master/src/index.js
             @apply border-b border-gray-500 text-blue-600;
         }
     }
+    p + pre {
+        @apply my-2
+    }
     pre {
         @apply font-code bg-gray-400 block max-w-full py-2 px-3 break-words rounded;
         code {
             @apply bg-transparent text-gray-900;
             font-size: .875em;
         }
+    }
+    pre + p {
+        @apply my-3;
     }
 }
 

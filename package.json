@@ -3,9 +3,11 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "dev": "npm-run-all --parallel dev:*",
+    "outdated-check": "ncu",
+    "dev": "npm-run-all --parallel dev:11ty watch:css",
     "dev:11ty": "ELEVENTY_ENV=development eleventy --serve",
-    "dev:parcel": "parcel watch src/_assets/css/main.css --out-dir _site_/assets --no-cache --log-level 4",
+    "dev:css": "parcel build src/_assets/css/* --out-dir _site_/assets/ --no-minify ",
+    "watch:css": "onchange -i 'src/_assets/css/*.css' -- npm run dev:css",
     "build": "npm-run-all -s prod:*",
     "prod:11ty": "ELEVENTY_ENV=production eleventy --output=./build",
     "prod:parcel": "parcel build src/_assets/css/* --out-dir ./build/assets --no-source-maps --no-minify --detailed-report 10",
@@ -18,21 +20,22 @@
   "description": "",
   "devDependencies": {
     "@11ty/eleventy": "^0.11.0",
-    "@11ty/eleventy-navigation": "^0.1.5",
+    "@11ty/eleventy-navigation": "^0.1.6",
     "@11ty/eleventy-plugin-syntaxhighlight": "^3.0.1",
     "@fullhuman/postcss-purgecss": "^2.3.0",
     "@toycode/markdown-it-class": "^1.2.4",
-    "autoprefixer": "^9.8.4",
+    "autoprefixer": "^9.8.6",
     "cssnano": "^4.1.10",
-    "luxon": "^1.24.1",
+    "luxon": "^1.25.0",
     "markdown-it": "^11.0.0",
     "markdown-it-anchor": "^5.3.0",
     "npm-run-all": "^4.1.5",
+    "onchange": "^7.0.2",
     "parcel-bundler": "^1.12.4",
     "postcss": "^7.0.32",
-    "postcss-modules": "^3.1.0",
-    "postcss-nested": "^4.2.1",
-    "tailwindcss": "^1.4.6"
+    "postcss-modules": "^3.2.2",
+    "postcss-nested": "^4.2.3",
+    "tailwindcss": "^1.7.6"
   },
   "dependencies": {
     "debug": "^4.1.1"
