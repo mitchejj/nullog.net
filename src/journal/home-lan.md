@@ -52,9 +52,9 @@ The default firmware release status is set to critical. I want to try and consis
     sudo rpi-eeprom-update -r
 
 [manjaro-min]: https://osdn.mirror.constant.com//storage/g/m/ma/manjaro-arm/rpi4/minimal/19.12/Manjaro-ARM-minimal-rpi4-19.12.img.xz
-[extra-work]: https://forum.manjaro.org/t/gpgme-error-no-data-minimal-19-12/134588
-[eeprom]: https://forum.manjaro.org/t/eeprom-update-working/126500
-[ROOT_MNJRO]: https://forum.manjaro.org/t/raspberry-pi-kernel-changes/146653
+[extra-work]: https://archived.forum.manjaro.org/t/gpgme-error-no-data-minimal-19-12/134588
+[eeprom]: https://archived.forum.manjaro.org/t/eeprom-update-working/126500
+[ROOT_MNJRO]: https://archived.forum.manjaro.org/t/raspberry-pi-kernel-changes/146653
 
 #### Extra
 

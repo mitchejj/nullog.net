@@ -5,9 +5,9 @@
   "scripts": {
     "outdated-check": "ncu",
     "dev": "npm-run-all --parallel dev:11ty watch:css",
-    "dev:11ty": "ELEVENTY_ENV=development eleventy --serve",
-    "dev:css": "parcel build src/_assets/css/* --out-dir _site_/assets/ --no-minify ",
     "watch:css": "onchange -i 'src/_assets/css/*.css' -- npm run dev:css",
+    "dev:11ty": "ELEVENTY_ENV=development eleventy --serve",
+    "dev:css": "NODE_ENV=DEV parcel build src/_assets/css/* --out-dir _site_/assets/ --no-minify --no-source-maps",
     "build": "npm-run-all -s prod:*",
     "prod:11ty": "ELEVENTY_ENV=production eleventy --output=./build",
     "prod:parcel": "parcel build src/_assets/css/* --out-dir ./build/assets --no-source-maps --no-minify --detailed-report 10",

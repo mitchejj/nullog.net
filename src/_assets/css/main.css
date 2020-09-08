@@ -35,16 +35,39 @@
     h6 {
         @apply text-xl my-3;
     }
+
+    blockquote {
+        @apply border-l-8 border-blue-400 bg-blue-100 text-xl py-1 px-4 my-2 mx-4 rounded-r;
+    
+        small {
+            @apply text-sm;
+            cite {
+
+                a {
+                    @apply border-b border-blue-400 text-gray-800;
+                    background-color: inherit;
+                    text-color: inherit;
+                }
+            }
+        }
+
+    }
+    blockquote p {
+        disply: inline;
+    }
     p {
         @apply leading-relaxed;
+
         a {
-            @apply bg-gray-200 text-blue-700 px-1 rounded-t; 
+/*            @apply bg-gray-200 text-gray-700 px-1 rounded-t; 
+ */
+            @apply border-b border-gray-500 text-blue-600;
         }
         a:hover {
             @apply border-b border-blue-400;
         }
         code {
-            @apply font-code px-1;
+            @apply font-code p-1 bg-gray-100 rounded;
             font-size: .875em;
         }
     }
@@ -82,10 +105,12 @@
         @apply my-2
     }
     pre {
-        @apply font-code bg-gray-400 block max-w-full py-2 px-3 break-words rounded;
+        @apply font-code border-l-8 border-blue-400 bg-gray-800 block max-w-full py-2 px-3 break-words rounded;
+        overflow-x: auto;
         code {
-            @apply bg-transparent text-gray-900;
+            @apply bg-transparent text-white;
             font-size: .875em;
+            display: inline;
         }
     }
     pre + p {
