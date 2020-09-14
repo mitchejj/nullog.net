@@ -32,10 +32,16 @@ module.exports = function(eleventyConfig) {
     eleventyConfig.addFilter("debug", function(value) {
         return `<xmp>${JSON.stringify(value || "NOTHING", null, 2)}</xmp>`;
     });
+    eleventyConfig.addFilter("layout", function(string) {
+        return string.replace(/\.[^/.]+$/, "")
+    });
     eleventyConfig.addFilter("short_date", function(value) {
         let date = new Date(value);
         let result = pad(date.getFullYear()) + '-' + pad(date.getMonth() + 1) + '-' + pad(date.getDate());
         return result;
+    });
+    eleventyConfig.addFilter("node_vers", function(value) {
+        return process.versions.node;
     });
     eleventyConfig.addFilter("rfc3339", function(value) {
         const date = new Date(value);

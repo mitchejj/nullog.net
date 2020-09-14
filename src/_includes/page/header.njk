@@ -1,9 +1,10 @@
 <header class="w-11/12 md:w-9/12 lg:w-5/12 ml-auto mr-auto pt-4 pb-1">
     <div class="flex flew-wrap"><h1 class="w-1/2 text-left text-blue-500 text-2xl">
-            <a href="/" title="{{ metadata.title }}">{{{ metadata._title_ }}}</a>
+            <a href="/" title="{{ metadata.title }}">{{ metadata._title_ | safe }}</a>
         </h1>
         <h2 class="w-1/2 text-right text-xl text-transparent sm:text-black">
             {{ metadata.subtitle }}
         </h2>
     </div>
 </header>
+

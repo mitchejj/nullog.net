@@ -1,7 +1,11 @@
 ---
-layout: index.hbs
-bg-color: bg-white
+layout: core.njk
+color:
+  background: 
+  text: 
 ---
+{% include 'landing/header.njk' %}
 <div class="font-sans w-11/12 md:w-1/2 lg:w-4/12 mr-auto ml-auto mt-3 md:mt-6 lg:mt-12 tracking-wide text-base lg:text-xl">
-    {{{ content }}}
+  {{ content | safe }}
 </div>
+

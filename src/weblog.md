@@ -1,5 +1,5 @@
 ---
-layout: layout/base.hbs
+layout: page.njk
 templateEngineOverride: njk,md
 title: weblog
 ---

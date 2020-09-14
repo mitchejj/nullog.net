@@ -1,5 +1,5 @@
 ---
-layout: layout/landing.hbs
+layout: landing.njk
 templateEngineOverride: hbs,md
 title: "mitchejj"
 ---

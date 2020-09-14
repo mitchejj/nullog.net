@@ -2,6 +2,10 @@
   "title": "nullog",
   "_title_": "nu<span class=\"underline\">ll</span>og",
   "subtitle": "running, °o°, tech, life",
+  "site": {
+      "name": "nullog",
+      "url": "https://nullog.net"
+  },
   "links": {
     "github": {
         "name": "GitHub",
@@ -22,7 +26,7 @@
   },
   "author": {
     "name": "Jason Mitchell",
-    "email": "@nullog.net"
+    "twitter": "@mitchejj"
   }
 }
 

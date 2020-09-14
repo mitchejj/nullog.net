@@ -1,0 +1,16 @@
+---
+templateEngineOverride: njk
+permalink: human.txt
+---
+/* AUTHOR, DESIGNER, & HANDYMAN */
+  Proprietor: {{ metadata.author.name }}
+  Site: {{ metadata.site.url }}
+  Twitter: {{ metadata.author.twitter | safe }}
+		
+/* SITE */
+  Name: {{ metadata.title }}
+  Domain: {{ metadata.url | getDomain }}
+  Language: English (en_US.UTF-8)
+  Doctype: HTML5
+  Tools: 11ty & Tailwind
+  Editor: neovim

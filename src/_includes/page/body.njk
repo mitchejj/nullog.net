@@ -1,0 +1,9 @@
+<body class="{{ color.background}} {{ color.text }}">
+  <div class="vh-90-min">
+    <section class="">
+  {%- include '../core/core_header.njk' -%}
+      {{ content | safe }}
+    </section>
+  </div>
+  {% include 'core/core_footer.njk' %}
+</body>

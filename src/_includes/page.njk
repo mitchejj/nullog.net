@@ -1,0 +1,33 @@
+---
+layout: core.njk
+color:
+  background: 
+  text: 
+---
+<div  class="vh-50-min font-sans mb-5">
+  {%- if hasWarning -%}
+    {% include 'page/weblog-warning.njk' %}
+  {%- endif -%}
+  <article class="">
+    <header class="{{ css.sane_space }}  border-b">
+    {%- if dispatch -%}}
+      <span class="block align-baseline text-sm text-blue-400 font-semibold"> &#10070; 
+        <a href="{{ dispatch }}" class="px-1 border-b "> {{ dispatch | getDomain }}</a>
+      </span>
+    {%- endif -%}
+    {%- if title -%}
+      <h3 class="text-3xl inline-block">{{ title | safe }} </h3>
+      <h4 class="ml-2 -mt-4 text-2xl inline-block text-gray-500"> {{ subtitle | safe}}</h4>
+    {%- endif -%}
+    </header>
+    
+    {%- if hasDate -%}
+    <div class= "{{ css.sane_space }}  mb-3 text-sm text-gray-400 font-semibold">
+      <time>{{ page.date | rfc3339 }}</time>
+    </div>
+    {%- endif -%}
+    <div class="{{ css.sane_space }} markdown tracking-wide">
+      {{ content | safe }}
+    </div>
+  </article>
+</div>

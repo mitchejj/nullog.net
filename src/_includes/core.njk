@@ -1,0 +1,18 @@
+<!doctype html>
+<html lang="en-US">
+  {% include 'core/html_header.njk' %}
+  
+{%- if layout == 'page.njk' -%}
+  {%- set name -%}{{ layout | layout | string }}{%- endset -%}
+  {% include name+ '/body.njk' ignore missing %}
+
+{%- elif layout == 'index.njk' -%}
+index
+{%- elif layout == 'landing.njk' -%}
+
+{%- set name -%}{{ layout | layout | string }}{%- endset -%}
+{% include name+ '/body.njk' %}
+
+{%- endif -%}
+</html>
+

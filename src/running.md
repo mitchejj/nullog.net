@@ -1,5 +1,5 @@
 ---
-layout: layout/base.hbs
+layout: page.njk
 title: running
 ---
 
