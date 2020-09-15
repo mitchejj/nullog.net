@@ -4,9 +4,12 @@ const { DateTime } = require("luxon");
 const pluginSyntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
 const pluginNavigation = require("@11ty/eleventy-navigation");
 const markdownItAnchor = require("markdown-it-anchor");
+const htmlmin = require('html-minifier');
 function pad(n) {
     return (n < 10) ? ("0" + n) : n;
 }
+
+const isProduction = process.env.ELEVENTY_ENV === 'production';
 
 module.exports = function(eleventyConfig) {
     eleventyConfig.setBrowserSyncConfig({
@@ -28,6 +31,20 @@ module.exports = function(eleventyConfig) {
     };
     const md = markdownIt(options)
         .use(markdownItClass, mapping);
+
+    eleventyConfig.addTransform('htmlmin', (content, outputPath) => {
+        if (outputPath.endsWith('.html') && isProduction) {
+            const minified = htmlmin.minify(content, {
+                collapseInlineTagWhitespace: false,
+                collapseWhitespace: true,
+                sortClassName: true,
+                useShortDoctype: true,
+                removeComments:true
+            });
+            return minified;
+        }
+        return content;
+    });
 
     eleventyConfig.addFilter("debug", function(value) {
         return `<xmp>${JSON.stringify(value || "NOTHING", null, 2)}</xmp>`;

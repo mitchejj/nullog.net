@@ -16,6 +16,7 @@ dispatch: null
 truncatable: true
 date: '2017-09-25T19:38:57-04:00'
 path: /2017/09/26/running-behind/
+templateEngineOverride: njk,md
 ---
 Talk about a late posting. I had this done for months just waiting to publish.
 
@@ -48,7 +49,7 @@ Again, work prevented me from really putting in the training time but I felt I s
     * First Half --- 1:07:45.4
     * Second Half --- 1:24:30.8
 
-<p><!-- without this line markdown-it renders the list above and below as a paragraph list items--!></p>
+<p>{# <!-- without this line markdown-it renders the list above and below as a paragraph list items --!> #}</p>
 
 * [Dark Side Half][darkSideHalf] --- 2:23:50
     * 5K Split --- 31:07

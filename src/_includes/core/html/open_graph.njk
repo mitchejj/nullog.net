@@ -1,9 +1,15 @@
-<meta property="og:url" content="{{ metadata.site.url}}{{ page.url }}">
 <meta property="og:type" content="website">
-<meta property="og:title" content="{{ title }}">
-<meta property="og:image" content="">
-<meta property="og:image:alt" content="">
-<meta property="og:description" content="">
-
 <meta property="og:site_name" content="{{ metadata.title }}">
+<meta property="og:url" content="{{ metadata.site.url}}{{ page.url }}">
+<meta property="og:title" content="{{ title }}">
+<meta property="og:description" content="{%- if meta.description
+                                               -%}{{ meta.description }}{%- else
+                                               -%}
+                                               {{ metadata.subtitle }}{%- endif
+                                               %}">
+{% if meta.image.url -%}
+<meta property="og:image" content="{{ meta.image.url }}">
+<meta property="og:image:alt" content="{{ meta.image.title }}">
+{%- else -%}
 <meta property="og:image" content="/assets/img/android-chrome-512x512.png">
+{%- endif -%}

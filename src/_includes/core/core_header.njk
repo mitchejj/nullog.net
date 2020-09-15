@@ -1,5 +1,5 @@
-{%- if isIndex -%}
-  {%- include '../index/header.njk' -%}
-{%- else -%}
+{%- if not isIndex -%}
   {%- include '../page/header.njk' -%}
+{%- else -%}
+  {%- include '../index/header.njk' -%}
 {%- endif -%}

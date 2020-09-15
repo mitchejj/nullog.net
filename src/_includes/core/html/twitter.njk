@@ -3,12 +3,14 @@
 <meta name="twitter:creator" content="@mitchejj">
 <meta name="twitter:url" content="{{ metadata.site.url}}{{ page.url }}">
 <meta name="twitter:title" content="{{ title }}">
-<meta name="twitter:description" content="{{ metadata.subtitle }}"> 
-{% if meta.image.url %}
+<meta name="twitter:description" content="{%- if meta.description
+                                               -%}{{ meta.description }}{%- else
+                                               -%}
+                                               {{ metadata.subtitle }}{%- endif
+                                               %}"> 
+{% if meta.image.url -%}
 <meta name="twitter:image" content="{{ meta.image.url }}">
-<link rel="preload" href="{{ meta.image.url }}" as="image">
-{% else %}
-<meta name="twitter:image" content="/assets/img/android-chrome-512x512.png">
-{% endif %}
 <meta name="twitter:image:alt" content="">
-
+{%- else -%}
+<meta name="twitter:image" content="/assets/img/android-chrome-512x512.png">
+{%- endif -%}

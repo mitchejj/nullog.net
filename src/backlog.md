@@ -4,7 +4,7 @@ templateEngineOverride: njk,md
 title: backlog
 isIndex: true
 ---
-<!-- entry.data.<what is in the frontmatter > --!>
+{# <!-- entry.data.{what is in the frontmatter } --!> #}
 <div class="-ml-6 -mr-6">
 <ul class="">
 {%- for entry in collections.backlog | reverse -%}

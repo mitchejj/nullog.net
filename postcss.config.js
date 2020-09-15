@@ -1,3 +1,5 @@
+const isProduction = process.env.NODE_ENV === 'production';
+
 const cssnano_options = {
     preset: ['default', {
         discardComments: {
@@ -19,7 +21,7 @@ const plugins = [
     require('postcss-nested'),
 ]
 
-if (process.env.NODE_ENV === 'production') {
+if (isPproduction) {
     plugins.push (
         require('autoprefixer'),
         require('cssnano')(cssnano_options),

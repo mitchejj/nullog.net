@@ -1,10 +1,11 @@
 <!-- Points to an external stylesheet -->
+<link rel="preload" href="/assets/main.css" as="style">
 <link rel="stylesheet" href="/assets/main.css" media="all" onload="this.media='all'">
 <!-- Helps prevent duplicate content issues -->
-<link rel="canonical" href="{{ metadata.site.url}}{{ page.url }}">
+<link rel="canonical" href="{{ metadata.site.url }}{{ page.url }}">
 
 <!-- Links to information about the author(s) of the document -->
-<link rel="author" href="humans.txt">
+<link rel="author" href="/humans.txt">
 
 <!-- Refers to a copyright statement that applies to the link's context -->
 <link rel="license" href="https://creativecommons.org/licenses/by/4.0/">
@@ -12,7 +13,11 @@
 <link rel="me" href="https://twitter.com/mitchejj">
 
 <!-- Links to a document that describes a collection of records, documents, or other materials of historical interest -->
-<link rel="archives" href="{{ metadata.site.url}}{{ page.url }}backlog/">
+<link rel="archives" href="{{ metadata.site.url }}{{ page.url }}backlog/">
 
 <!-- Links to top level resource in an hierarchical structure -->
-<link rel="index" href="{{ metadata.site.url}}{{ page.url }}weblog/">
+<link rel="index" href="{{ metadata.site.url }}{{ page.url }}weblog/">
+
+{% if meta.image.url %}
+<link rel="preload" href="{{ meta.image.url }}" as="image">
+{% endif %}
