@@ -21,7 +21,7 @@ const plugins = [
     require('postcss-nested'),
 ]
 
-if (isPproduction) {
+if (isProduction) {
     plugins.push (
         require('autoprefixer'),
         require('cssnano')(cssnano_options),
