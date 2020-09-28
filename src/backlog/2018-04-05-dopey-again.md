@@ -42,15 +42,19 @@ The weekend was an enjoyable escaped even if the weather wasn’t as nice as I h
 #### Official Chip Times (with strava links)
 * [Dopey Challenge 5k][d5k] --- 30:46
 * [Dopey Challenge 10k][d10k] --- 1:04:19
-   * 5K Split --- 32:25
+   * 5K Split --- 32:26
+   * Clock Time --- 1:16:39
 * [Dopey Challenge Half Marathon][dHalf] --- 2:19:42
-   * 5K Split --- 33:04
-   * 15K Split --- 1:40:19
+   * 5k Split --- 33:04
+   * 10k Split --- 1:06:18
+   * 15k Split --- 1:40:18
+   * Clock Time --- 2:41:21
 * [Dopey Challenge Full Marathon][dFull] --- 5:11:22
-   * 5M Split --- 55:40
+   * 5M Split --- 55:41
    * 10M Split --- 1:51:05
    * Half Split --- 2:25:52
-   * 20M Split --- 3:48:50
+   * 20M Split --- 3:48:52
+   * Clock TIme --- 5:34:35
 
 [d5k]: https://www.strava.com/activities/1340216103
 [d10k]: https://www.strava.com/activities/1341772555
