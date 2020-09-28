@@ -45,7 +45,6 @@
 
                 a {
                     @apply border-b border-blue-400 text-gray-800;
-                    background-color: inherit;
                     text-color: inherit;
                 }
             }
@@ -53,7 +52,7 @@
 
     }
     blockquote p {
-        disply: inline;
+        display: inline;
     }
     p {
         @apply leading-relaxed;
