@@ -10,7 +10,7 @@
     "dev:css": "NODE_ENV=DEV parcel build src/_assets/css/* --out-dir _site_/assets/ --no-minify --no-source-maps",
     "build": "npm-run-all -s prod:*",
     "prod:11ty": "ELEVENTY_ENV=production eleventy --output=./build",
-    "prod:parcel": "parcel build src/_assets/css/* --out-dir ./build/assets --no-source-maps --no-minify --detailed-report 10",
+    "prod:parcel": "NODE_ENV=production parcel build src/_assets/css/* --out-dir ./build/assets --no-source-maps --no-minify --detailed-report 10",
     "serve": "npx eleventy --serve",
     "debug": "DEBUG=* npx eleventy"
   },
@@ -24,7 +24,7 @@
     "@11ty/eleventy-plugin-syntaxhighlight": "^3.0.1",
     "@fullhuman/postcss-purgecss": "^3.0.0",
     "@toycode/markdown-it-class": "^1.2.4",
-    "autoprefixer": "^10.0.1",
+    "autoprefixer": "^9.8.6",
     "cssnano": "^4.1.10",
     "html-minifier": "^4.0.0",
     "luxon": "^1.25.0",
