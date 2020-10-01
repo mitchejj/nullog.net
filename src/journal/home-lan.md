@@ -1,6 +1,6 @@
 ---
-title: Pi4 Network Servers
-subtitle: Manjaro
+title: Network Pi4 Servers
+subtitle: enter Manjaro
 date: 2020-05-13T02:39:27.026Z
 ---
 I've been a distro hopper for sometime when it comes to my home network. First, I deploy everything on Raspberry Pi's. Currently I have three in "production" Zero W (ns0), Raspberry Pi 4 1GB (ns1) and a Raspberry Pi 4 4GB (ns4).
