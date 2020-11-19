@@ -7,7 +7,7 @@ When I moved to 11ty I opted to use handelbars as the templating system. I knew 
 * core/
     * html/
         * icons.njk --- provides the icons/favicon
-        * link.njk --- provides stylesheet, cononical ref, etc
+        * link.njk --- provides stylesheet, canonical ref, etc
         * meta.njk --- provides page metadata
         * open_graph.njk --- provides the the open graph tags
         * twitter.njk --- provides the twitter card tags
