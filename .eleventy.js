@@ -1,75 +1,41 @@
-const fs = require('fs')
-const { DateTime } = require('luxon')
-// const pluginRss = require("@11ty/eleventy-plugin-rss");
-const pluginSyntaxHighlight = require('@11ty/eleventy-plugin-syntaxhighlight')
-const pluginNavigation = require('@11ty/eleventy-navigation')
-const markdownItAnchor = require('markdown-it-anchor')
-const htmlmin = require('html-minifier')
-function pad (n) {
-  return (n < 10) ? ('0' + n) : n
-}
+//
+const rfc3339 = require('./utils/filters/rfc3339.js')
+const shortDate = require('./utils/filters/shortDate.js')
+const getDomain = require('./utils/filters/getDomain.js')
+const _layout = require('./utils/filters/layout.js')
 
 const isProduction = process.env.NODE_ENV === 'production'
 
 module.exports = function (eleventyConfig) {
-  eleventyConfig.setBrowserSyncConfig({
-    ui: false,
-    ghostMode: false
-  })
-  const markdownIt = require('markdown-it')
-  const markdownItClass = require('@toycode/markdown-it-class')
+  if (isProduction) {
+    const minHtml = require('./utils/transforms/minHtml.js')
+    eleventyConfig.addTransform('htmlmin', minHtml)
+  }
 
-  const options = {
+  // Setting up Markdown It
+  /* ********************************************************************* */
+  const markdown = require('markdown-it')
+  const markdownOptions = {
     html: true,
     breaks: true,
     linkify: true,
     typographer: true
   }
-  const mapping = {
-    code: ['md-code'],
-    em: ['tag']
-  }
-  const md = markdownIt(options)
-    .use(markdownItClass, mapping)
+  const md = markdown(markdownOptions)
+  eleventyConfig.setLibrary('md', md)
 
-  eleventyConfig.addTransform('htmlmin', (content, outputPath) => {
-    if (outputPath.endsWith('.html') && isProduction) {
-      const minified = htmlmin.minify(content, {
-        collapseInlineTagWhitespace: false,
-        collapseWhitespace: true,
-        sortClassName: true,
-        useShortDoctype: true,
-        removeComments: true
-      })
-      return minified
-    }
-    return content
-  })
+  // Adding Filers
+  /* ********************************************************************* */
+  // eleventyConfig.addFilter('debug', function (value) {
+  //   return `<xmp>${JSON.stringify(value || 'NOTHING', null, 2)}</xmp>`
+  // })
+  eleventyConfig.addFilter('layout', _layout)
+  eleventyConfig.addFilter('rfc3339', rfc3339)
+  eleventyConfig.addFilter('short_date', shortDate)
+  eleventyConfig.addFilter('getDomain', getDomain)
 
-  eleventyConfig.addFilter('debug', function (value) {
-    return `<xmp>${JSON.stringify(value || 'NOTHING', null, 2)}</xmp>`
-  })
-  eleventyConfig.addFilter('layout', function (string) {
-    return string.replace(/\.[^/.]+$/, '')
-  })
-  eleventyConfig.addFilter('short_date', function (value) {
-    const date = new Date(value)
-    const result = pad(date.getFullYear()) + '-' + pad(date.getMonth() + 1) + '-' + pad(date.getDate())
-    return result
-  })
-  eleventyConfig.addFilter('node_vers', function (value) {
-    return process.versions.node
-  })
-  eleventyConfig.addFilter('rfc3339', function (value) {
-    const date = new Date(value)
-    const result = date.toISOString()
-    return result
-  })
-  eleventyConfig.addFilter('getDomain', function (value) {
-    const url = value.replace('http://', '').replace('https://', '')
-    const urlParts = url.split(/[/?#]/)
-    return urlParts[0]
-  })
+  // Adding Collections
+  /* ********************************************************************* */
 
   eleventyConfig.addCollection('_journal', function (collection) {
     return collection.getFilteredByGlob('src/journal/*.md')
@@ -83,7 +49,11 @@ module.exports = function (eleventyConfig) {
 
   eleventyConfig.addPassthroughCopy({ 'src/_assets/img': 'assets/img' })
 
-  eleventyConfig.setLibrary('md', md)
+  eleventyConfig.setBrowserSyncConfig({
+    ui: false,
+    ghostMode: false
+  })
+
   return {
     dir: {
       input: 'src',
