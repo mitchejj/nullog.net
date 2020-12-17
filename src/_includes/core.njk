@@ -6,13 +6,13 @@
   {%- set name -%}{{ layout | layout | string }}{%- endset -%}
   {% include name+ '/body.njk' ignore missing %}
 
-{%- elif layout == 'index.njk' -%}
-index
 {%- elif layout == 'landing.njk' -%}
+  {%- set name -%}{{ layout | layout | string }}{%- endset -%}
+  {% include name+ '/body.njk' %}
 
-{%- set name -%}{{ layout | layout | string }}{%- endset -%}
-{% include name+ '/body.njk' %}
-
+{%- elif layout == 'index.njk' -%}
+  Remember index.njk does nothing! An index is built via something like
+  journal.md
 {%- endif -%}
 </html>
 

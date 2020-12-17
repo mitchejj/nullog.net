@@ -1,4 +1,4 @@
-//
+
 const rfc3339 = require('./utils/filters/rfc3339.js')
 const shortDate = require('./utils/filters/shortDate.js')
 const getDomain = require('./utils/filters/getDomain.js')
@@ -46,6 +46,11 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addCollection('weblog', function (collection) {
     return collection.getFilteredByGlob('src/weblog/*.md')
   })
+
+  // Plugin's
+  /* ********************************************************************* */
+  // {% link_to "something-slug %}
+  eleventyConfig.addPlugin(require('eleventy-plugin-link_to'))
 
   eleventyConfig.addPassthroughCopy({ 'src/_assets/img': 'assets/img' })
 

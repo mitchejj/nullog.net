@@ -1,13 +1,5 @@
 const isProduction = process.env.NODE_ENV === 'production'
 
-const cssnano_options = {
-  preset: ['default', {
-    discardComments: {
-      removeAll: true
-    }
-  }]
-}
-
 const plugins = [
   require('tailwindcss'),
   require('postcss-nested')
@@ -23,9 +15,16 @@ if (isProduction) {
   //   defaultExtractor: content => content.match(/[\w-/:]+(?<!:)/g) || []
   // }
 
+  const nanoOptions = {
+    preset: ['default', {
+      discardComments: {
+        removeAll: true
+      }
+    }]
+  }
   plugins.push(
     require('autoprefixer'),
-    require('cssnano')(cssnano_options)//,
+    require('cssnano')(nanoOptions)//,
     // require('@fullhuman/postcss-purgecss')(purgecss_options)
   )
 }
