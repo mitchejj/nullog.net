@@ -4,13 +4,13 @@
   "main": "index.js",
   "scripts": {
     "outdated-check": "ncu",
-    "dev": "npm-run-all --parallel dev:11ty watch:css",
+    "dev": "npm-run-all --parallel dev:*",
     "watch:css": "onchange -i 'src/_assets/css/*.css' -- npm run dev:css",
-    "dev:11ty": "ELEVENTY_ENV=development eleventy --serve",
-    "dev:css": "NODE_ENV=DEV parcel build src/_assets/css/* --out-dir _site_/assets/ --no-minify --no-source-maps",
-    "build": "npm-run-all -s prod:*",
-    "prod:11ty": "ELEVENTY_ENV=production eleventy --output=./build",
-    "prod:parcel": "NODE_ENV=production parcel build src/_assets/css/* --out-dir ./build/assets --no-source-maps --no-minify --detailed-report 10",
+    "dev:11ty": "eleventy --serve",
+    "dev:css": "postcss src/_assets/css/ --dir _site_/assets/  -m -w --verbose",
+    "build": "NODE_ENV=production npm-run-all -s build:*",
+    "build:11ty": "eleventy --output=./build",
+    "build:css": "postcss src/_assets/css/ --dir ./build/assets --no-map --verbose",
     "serve": "npx eleventy --serve",
     "debug": "DEBUG=* npx eleventy"
   },
@@ -24,21 +24,20 @@
     "@11ty/eleventy-plugin-syntaxhighlight": "^3.0.4",
     "@fullhuman/postcss-purgecss": "^3.1.3",
     "@toycode/markdown-it-class": "^1.2.4",
-    "autoprefixer": "^9.8.6",
     "cssnano": "^4.1.10",
     "html-minifier": "^4.0.0",
     "luxon": "^1.25.0",
-    "markdown-it": "^11.0.1",
-    "markdown-it-anchor": "^5.3.0",
+    "markdown-it": "^12.0.3",
+    "markdown-it-anchor": "^6.0.1",
     "npm-run-all": "^4.1.5",
     "onchange": "^7.1.0",
-    "parcel-bundler": "^1.12.4",
     "postcss": "^8.2.1",
-    "postcss-modules": "^3.2.2",
-    "postcss-nested": "^4.2.3",
-    "tailwindcss": "^1.9.6"
+    "postcss-cli": "^8.3.1",
+    "postcss-modules": "^4.0.0",
+    "postcss-nested": "^5.0.3"
   },
   "dependencies": {
-    "debug": "^4.3.1"
+    "autoprefixer": "^10.1.0",
+    "tailwindcss": "^2.0.2"
   }
 }

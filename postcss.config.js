@@ -8,24 +8,25 @@ const cssnano_options = {
   }]
 }
 
-/* this is 'inspired' by
- * https://flaviocopes.com/tailwind-setup/
- */
-const purgecss_options = {
-  content: ['./build/**/*.html'],
-  defaultExtractor: content => content.match(/[\w-/:]+(?<!:)/g) || []
-}
-
 const plugins = [
   require('tailwindcss'),
   require('postcss-nested')
 ]
 
 if (isProduction) {
+  /* this is 'inspired' by
+    https://flaviocopes.com/tailwind-setup/
+  */
+
+  // const purgecss_options = {
+  //   content: ['./build/**/*.html'],
+  //   defaultExtractor: content => content.match(/[\w-/:]+(?<!:)/g) || []
+  // }
+
   plugins.push(
     require('autoprefixer'),
-    require('cssnano')(cssnano_options),
-    require('@fullhuman/postcss-purgecss')(purgecss_options)
+    require('cssnano')(cssnano_options)//,
+    // require('@fullhuman/postcss-purgecss')(purgecss_options)
   )
 }
 

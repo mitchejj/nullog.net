@@ -5,7 +5,12 @@ module.exports = {
     defaultLineHeights: true,
     standardFontWeights: true
   },
-  purge: false,
+  purge: {
+    enabled: process.env.NODE_ENV === 'production',
+    content: [
+      './build/**/*.html'
+    ]
+  },
   theme: {
     listStyleType: {
       none: 'none',

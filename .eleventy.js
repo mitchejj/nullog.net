@@ -9,7 +9,7 @@ function pad (n) {
   return (n < 10) ? ('0' + n) : n
 }
 
-const isProduction = process.env.ELEVENTY_ENV === 'production'
+const isProduction = process.env.NODE_ENV === 'production'
 
 module.exports = function (eleventyConfig) {
   eleventyConfig.setBrowserSyncConfig({
